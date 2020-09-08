@@ -6,7 +6,7 @@ function getTheRichestUser() {
         if (xmlhttp.status == 200)
             document.getElementById("result").innerHTML = xmlhttp.responseText;
     }
-    xmlhttp.open("GET", "/GettingRichestUserController", true);
+    xmlhttp.open("GET", "/GetTheRichestUserController", true);
     xmlhttp.send();
 }
 
@@ -18,6 +18,6 @@ function getAccountsSum() {
         if (xmlhttp.status == 200)
             document.getElementById("result1").innerHTML = xmlhttp.responseText;
     }
-    xmlhttp.open("GET", "/GettingSumAccountsController", true);
+    xmlhttp.open("GET", "/GetSumAccountsController", true);
     xmlhttp.send();
 }
