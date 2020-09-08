@@ -7,4 +7,5 @@ import java.util.List;
 
 public interface UserService {
     List<User> getRichestOfUsers() throws SQLException;
+    User getById (int id) throws SQLException;
 }

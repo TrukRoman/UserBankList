@@ -24,4 +24,24 @@
         <url-pattern>/GetTheRichestUserController</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>GetUserByIDController</servlet-name>
+        <servlet-class>by.devincubator.userBankList.controller.GetUserByIDController</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>GetUserByIDController</servlet-name>
+        <url-pattern>/GetUserByIDController</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>GetAllAccountsController</servlet-name>
+        <servlet-class>by.devincubator.userBankList.controller.GetAllAccountsController</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>GetAllAccountsController</servlet-name>
+        <url-pattern>/GetAllAccountsController</url-pattern>
+    </servlet-mapping>
+
 </web-app>

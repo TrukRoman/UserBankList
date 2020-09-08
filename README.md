@@ -1,6 +1,6 @@
 User Bank List - test task
 
-Web-app for getting the richest user and sum of accounts
+Web-app for getting the richest user, sum of accounts, shows user data by id, all accounts
 
 1) download or clone repository
 2) input your url, username, password for db in /resources/app.properties

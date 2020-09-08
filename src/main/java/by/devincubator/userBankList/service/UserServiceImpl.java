@@ -15,4 +15,9 @@ public class UserServiceImpl implements UserService {
     public List<User> getRichestOfUsers() throws SQLException {
         return userDAO.getRichestOfUsers();
     }
+
+    @Override
+    public User getById(int id) throws SQLException {
+        return userDAO.getById(id);
+    }
 }

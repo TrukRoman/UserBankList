@@ -18,7 +18,6 @@
     </style>
 </head>
 
-<body>
 <h1>UserBankList</h1>
 <table>
     <tr><th>№</th><th>parameter</th><th>value</th><th></th></tr>
@@ -37,5 +36,16 @@
         </td>
     </tr>
 </table>
+
+<p><b> Show users data by id </b><p>
+<p> Enter id </p>
+<p><input type="text" id="number"> </p>
+<p><input type="button" value="Receive" onclick="getById()"></p>
+<p><span id="status"></span></p>
+
+<p><b> Show all accounts </b></p>
+<p><input type= "button" value= "Receive" onclick = "getAllAccounts()"></p>
+<p><span id="res"></span></p>
+
 </body>
 </html>
