@@ -6,6 +6,7 @@ import by.devincubator.userBankList.service.AccountServiceImpl;
 import by.devincubator.userBankList.service.UserService;
 import by.devincubator.userBankList.service.UserServiceImpl;
 
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -13,6 +14,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
 
+@WebServlet(urlPatterns = "/GetUserByIDController")
 public class GetUserByIDController extends HttpServlet {
     private UserService userService = new UserServiceImpl();
     private AccountService accountService = new AccountServiceImpl();

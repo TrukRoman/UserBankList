@@ -3,6 +3,7 @@ package by.devincubator.userBankList.controller;
 import by.devincubator.userBankList.service.AccountService;
 import by.devincubator.userBankList.service.AccountServiceImpl;
 
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -10,6 +11,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
 
+@WebServlet(urlPatterns = "/GetSumAccountsController")
 public class GetSumAccountsController extends HttpServlet {
     private AccountService accountService = new AccountServiceImpl();
 
