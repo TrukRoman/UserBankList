@@ -34,8 +34,7 @@ public class User {
 
     @Override
     public String toString() {
-        return "id=" + user_id +
-                " " + name +
+        return  name +
                 " " + surname;
     }
 }

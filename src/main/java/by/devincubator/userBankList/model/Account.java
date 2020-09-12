@@ -34,8 +34,7 @@ public class Account {
 
     @Override
     public String toString() {
-        return "Account{" +
-                "account_id=" + account_id +
+        return "{ account_id=" + account_id +
                 ", account=" + account +
                 ", user_id=" + user_id +
                 '}';
