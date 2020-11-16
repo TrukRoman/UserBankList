@@ -1,8 +1,6 @@
 package by.devincubator.userBankList.controller;
 
 import by.devincubator.userBankList.model.User;
-import by.devincubator.userBankList.service.AccountService;
-import by.devincubator.userBankList.service.AccountServiceImpl;
 import by.devincubator.userBankList.service.UserService;
 import by.devincubator.userBankList.service.UserServiceImpl;
 
@@ -14,10 +12,9 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
 
-@WebServlet(urlPatterns = "/GetUserByIDController")
+@WebServlet(urlPatterns = "/getUserByID")
 public class GetUserByIDController extends HttpServlet {
     private UserService userService = new UserServiceImpl();
-    private AccountService accountService = new AccountServiceImpl();
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
