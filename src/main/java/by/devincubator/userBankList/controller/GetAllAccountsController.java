@@ -2,34 +2,29 @@ package by.devincubator.userBankList.controller;
 
 import by.devincubator.userBankList.model.Account;
 import by.devincubator.userBankList.service.AccountService;
-import by.devincubator.userBankList.service.AccountServiceImpl;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 
-import javax.servlet.RequestDispatcher;
-import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
+import java.util.Map;
 
-@WebServlet(urlPatterns = "/getAllAccounts")
-public class GetAllAccountsController extends HttpServlet {
-    private AccountService accountService = new AccountServiceImpl();
+@Controller
+public class GetAllAccountsController {
 
-    @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
-        List <Account> listAccount = null;
-        try {
-            listAccount = accountService.getAllAccounts();
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
-        }
-        req.setAttribute("listAccount", listAccount);
-        RequestDispatcher dispatcher = req.getRequestDispatcher("accounts.jsp");
-        dispatcher.forward(req, resp);
+    private AccountService accountService;
+
+    @Autowired
+    public void setAccountService(AccountService accountService) {
+        this.accountService = accountService;
     }
 
-
+    @GetMapping(value = "/getAllAccounts")
+    public String getAllAccounts(Map<String, Object> model) throws SQLException {
+        List <Account> listAccount = null;
+        listAccount = accountService.getAllAccounts();
+        model.put("listAccount", listAccount);
+        return "accounts";
+    }
 }

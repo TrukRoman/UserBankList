@@ -17,6 +17,7 @@
 
 <body>
 
+<br/>
 <div class="row">
     <br><br>
     <div class="container">
@@ -25,10 +26,10 @@
         <div class="container text-center">
             <a href="<%=request.getContextPath()%>/" class="btn btn-success">Get user by id</a>
             <a href="<%=request.getContextPath()%>/getAllAccounts" class="btn btn-success">Show all acconts</a>
-            <a href="<%=request.getContextPath()%>/theRichestUser" class="btn btn-success">Show the richest user</a>
+            <a href="<%=request.getContextPath()%>/getRichestUser" class="btn btn-success">Show the richest user</a>
             <a href="<%=request.getContextPath()%>/getSumAccount" class="btn btn-success">Get sum of account's</a>
         </div>
-        <br>
+        <br/>
         <h1 align="center">Sum of accounts: ${sum}</h1>
     </div>
 </div>

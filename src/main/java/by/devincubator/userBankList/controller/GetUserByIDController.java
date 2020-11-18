@@ -2,31 +2,28 @@ package by.devincubator.userBankList.controller;
 
 import by.devincubator.userBankList.model.User;
 import by.devincubator.userBankList.service.UserService;
-import by.devincubator.userBankList.service.UserServiceImpl;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
-import java.io.PrintWriter;
 import java.sql.SQLException;
 
-@WebServlet(urlPatterns = "/getUserByID")
-public class GetUserByIDController extends HttpServlet {
-    private UserService userService = new UserServiceImpl();
+@Controller
+public class GetUserByIDController {
 
-    @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
-        resp.setContentType("text/html; charset=UTF-8");
-        PrintWriter writer = resp.getWriter();
-        User user = null;
-        int id = Integer.parseInt(req.getParameter("user_id"));
-        try {
-            user = userService.getById(id);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        writer.println(user);
+    private UserService userService;
+
+    @Autowired
+    public void setUserService(UserService userService) {
+        this.userService = userService;
+    }
+
+    @PostMapping(value = "/getUserByID")
+    public String getUserByID(@RequestParam("user_id") int id, Model model) throws SQLException {
+        User user = userService.getById(id);
+        model.addAttribute("user", user);
+        return "getUserById";
     }
 }

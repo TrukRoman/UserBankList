@@ -2,7 +2,8 @@ create table user
 (
     user_id int PRIMARY KEY NOT NULL,
     name    varchar(45),
-    surname varchar(45)
+    surname varchar(45),
+    account_id int
 );
 
 create table account

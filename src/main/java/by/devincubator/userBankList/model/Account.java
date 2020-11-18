@@ -1,9 +1,19 @@
 package by.devincubator.userBankList.model;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "account")
 public class Account {
+    @Id
+    @Column(name = "account_id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int account_id;
     private int account;
-    private int user_id;
+
+    @OneToOne(fetch = FetchType.LAZY, mappedBy = "account")
+    @JoinColumn(name = "user_id")
+    private User user;
 
     public Account() {
     }
@@ -24,19 +34,18 @@ public class Account {
         this.account = account;
     }
 
-    public int getUser_id() {
-        return user_id;
+    public User getUser() {
+        return user;
     }
 
-    public void setUser_id(int user_id) {
-        this.user_id = user_id;
+    public void setUser(User user) {
+        this.user = user;
     }
 
     @Override
     public String toString() {
         return "{ account_id=" + account_id +
                 ", account=" + account +
-                ", user_id=" + user_id +
                 '}';
     }
 }

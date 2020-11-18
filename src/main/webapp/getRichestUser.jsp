@@ -17,6 +17,7 @@
 
 <body>
 
+<br/>
 <div class="row">
     <br><br>
     <div class="container">
@@ -25,7 +26,7 @@
         <div class="container text-center">
             <a href="<%=request.getContextPath()%>/" class="btn btn-success">Get user by id</a>
             <a href="<%=request.getContextPath()%>/getAllAccounts" class="btn btn-success">Show all acconts</a>
-            <a href="<%=request.getContextPath()%>/theRichestUser" class="btn btn-success">Show the richest user</a>
+            <a href="<%=request.getContextPath()%>/getRichestUser" class="btn btn-success">Show the richest user</a>
             <a href="<%=request.getContextPath()%>/getSumAccount" class="btn btn-success">Get sum of account's</a>
         </div>
         <br>
@@ -35,6 +36,7 @@
                 <th>Id</th>
                 <th>Name</th>
                 <th>Surname</th>
+                <th>Account</th>
             </tr>
             </thead>
             <tbody>
@@ -49,6 +51,9 @@
                     </td>
                     <td>
                         <c:out value="${users.surname}" />
+                    </td>
+                    <td>
+                        <c:out value="${users.account.account}" />
                     </td>
                 </tr>
             </c:forEach>

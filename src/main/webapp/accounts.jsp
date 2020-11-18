@@ -10,6 +10,7 @@
 
 <body>
 
+<br/>
 <div class="row">
 <br><br>
     <div class="container">
@@ -18,7 +19,7 @@
         <div class="container text-center">
             <a href="<%=request.getContextPath()%>/" class="btn btn-success">Get user by id</a>
             <a href="<%=request.getContextPath()%>/getAllAccounts" class="btn btn-success">Show all acconts</a>
-            <a href="<%=request.getContextPath()%>/theRichestUser" class="btn btn-success">Show the richest user</a>
+            <a href="<%=request.getContextPath()%>/getRichestUser" class="btn btn-success">Show the richest user</a>
             <a href="<%=request.getContextPath()%>/getSumAccount" class="btn btn-success">Get sum of account's</a>
         </div>
         <br>
@@ -27,7 +28,7 @@
             <tr>
                 <th>Account Id</th>
                 <th>Account</th>
-                <th>User Id</th>
+                <th>User</th>
             </tr>
             </thead>
             <tbody>
@@ -41,7 +42,7 @@
                         <c:out value="${listAccount.account}" />
                     </td>
                     <td>
-                        <c:out value="${listAccount.user_id}" />
+                        <c:out value="${listAccount.user}" />
                     </td>
                 </tr>
             </c:forEach>
